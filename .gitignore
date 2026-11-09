@@ -1,0 +1,6 @@
+# Project data (too large for GitHub, linked in README)
+data/raw/
+data/clean/
+
+# Jupyter
+.ipynb_checkpoints/
