@@ -22,10 +22,16 @@ Python (pandas, scipy, matplotlib/seaborn) · SQL (MySQL) · Tableau Public
 ## Progress
 - [x] Raw data checked (`notebook/00_check_files.ipynb`)
 - [x] California data cleaned (`notebook/01_clean_california.ipynb`)
-- [ ] EU CosIng data cleaned
+- [x] EU CosIng data cleaned and matched to California (`notebook/02_clean_cosing.ipynb`)
 - [ ] SQL database
 - [ ] Analysis and hypothesis tests
 - [ ] Tableau dashboard
+
+## First findings (preliminary)
+- 37 of the chemicals reported in California cosmetics are banned in the EU (Annex II); 20 more are restricted (Annex III).
+- 845 reports, 455 products and 86 companies are affected.
+- Chemicals banned in the EU were removed from products more often (16.7%) than the others (6.0%, without titanium dioxide). Statistical testing follows.
+- Many banned hits are impurities (e.g. 1,4-dioxane, benzene) that the EU only tolerates as unavoidable traces.
 
 ## Author
 Dr. Simindokht Gol Kar – PhD chemist (inorganic/materials chemistry) using data to support product-safety and R&D decisions.
