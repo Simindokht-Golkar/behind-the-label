@@ -4,3 +4,6 @@ data/clean/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Secrets (database password)
+.env

@@ -23,7 +23,7 @@ Python (pandas, scipy, matplotlib/seaborn) · SQL (MySQL) · Tableau Public
 - [x] Raw data checked (`notebook/00_check_files.ipynb`)
 - [x] California data cleaned (`notebook/01_clean_california.ipynb`)
 - [x] EU CosIng data cleaned and matched to California (`notebook/02_clean_cosing.ipynb`)
-- [ ] SQL database
+- [X] SQL database
 - [ ] Analysis and hypothesis tests
 - [ ] Tableau dashboard
 
