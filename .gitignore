@@ -7,3 +7,5 @@ data/clean/
 
 # Secrets (database password)
 .env
+
+notebook/test*.ipynb
