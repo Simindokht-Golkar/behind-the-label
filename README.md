@@ -24,8 +24,7 @@ Python (pandas, scipy, SQLAlchemy, matplotlib/seaborn) · SQL (MySQL) · Tableau
 - [x] California data cleaned (`notebook/01_clean_california.ipynb`)
 - [x] EU CosIng data cleaned and matched to California (`notebook/02_clean_cosing.ipynb`)
 - [x] Sephora data cleaned, ingredients matched to CosIng (`notebook/03_clean_sephora.ipynb`)
-- [x] MySQL database: 9
-- [ ]  tables, load script and EU-status function (`notebook/04_sql_load.ipynb`, `sql/`)
+- [x] MySQL database: 9 tables, load script and EU-status function (`notebook/04_sql_load.ipynb`, `sql/`)
 - [x] Exploratory analysis and charts (`notebook/05_exploratory_data_analysis.ipynb`)
 - [x] Hypothesis tests H1 and H4 (`notebook/06_hypothesis_tests.ipynb`)
 - [ ] Hypothesis tests H2 and H3 (skin type, ingredient functions)
