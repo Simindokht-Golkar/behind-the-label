@@ -9,3 +9,6 @@ data/clean/
 .env
 
 notebook/test*.ipynb
+
+data/tableau/
+tableau/
