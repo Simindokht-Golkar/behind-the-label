@@ -16,8 +16,8 @@ and can ingredient chemistry explain which products work for which skin?
 ## Data
 | Source | Content | Licence |
 |---|---|---|
-| [California Safe Cosmetics Program (CDPH)](https://lab.data.ca.gov/dataset/chemicals-in-cosmetics) | Hazardous chemicals reported in ~37,000 cosmetic products, 2009–2020 | CC BY |
-| [EU CosIng database](https://ec.europa.eu/growth/tools-databases/cosing/) | Banned/restricted substances (Annexes II–VI) and ingredient functions | EU public data |
+| [California Safe Cosmetics Program (CDPH)](https://data.ca.gov/dataset/chemicals-in-cosmetics) | Hazardous chemicals reported in ~37,000 cosmetic products, 2009–2020 | CC BY |
+| EU CosIng annexes II–VI and ingredient inventory (content: European Commission). Copy used: [nad949/CosIng on Hugging Face](https://huggingface.co/datasets/nad949/CosIng) | Banned/restricted substances (Annexes II–VI) and ingredient functions | EU public data; the copy states no licence |
 | [Sephora Products and Skincare Reviews](https://www.kaggle.com/datasets/nadyinky/sephora-products-and-skincare-reviews) (Nady Inky, Kaggle) | 8,494 products, 1.1 million skincare reviews | CC BY 4.0 |
 
 Raw data is not stored in this repository; download it from the links above into `data/raw/`.
@@ -37,12 +37,12 @@ Raw data is not stored in this repository; download it from the links above into
 | MySQL Server | 8.0.46 |
 | Tableau Public | desktop app, 2026 |
 
-The full list of packages is in [`environment.yml`](environment.yml).
+The full list of packages is in [`environment.yml`](environment.yml). It was exported on Windows; on macOS or Linux, install the packages from the table above instead.
 
 ## How to run
 1. Create the environment: `conda env create -f environment.yml`, then `conda activate behind_the_label`.
 2. Install MySQL 8, create a file `.env` in the main folder with one line `CON_STRING=mysql+pymysql://USER:PASSWORD@localhost:3306/behind_the_label` (the file is listed in `.gitignore`).
-3. Download the raw data (links above) into `data/raw/california/`, `data/raw/cosing/` and `data/raw/sephora/`.
+3. Download the raw data (links above) into `data/raw/california/`, `data/raw/cosing/` and `data/raw/sephora/`. Also create the empty folders `data/clean/` and `data/tableau/`.
 4. Run the notebooks in this order: **00, 01, 02, 04, 03, 05, 06, 07, 08**. Notebook 04 loads the database that notebook 03 needs for the ingredient matching.
 
 ## Progress
@@ -56,7 +56,7 @@ The full list of packages is in [`environment.yml`](environment.yml).
 - [x] Hypothesis tests H2 and H3: skin type and ingredient functions (`notebook/07_sephora_tests.ipynb`)
 - [x] Export of flat files for Tableau (`notebook/08_tableau_export.ipynb`)
 - [x] Tableau Public dashboards: safety page and skin-type page
-- [X] Presentation (19 November 2026)
+- [x] Presentation (19 November 2026)
 
 ## Findings
 **California reports vs. EU rules**
@@ -93,6 +93,8 @@ The full list of packages is in [`environment.yml`](environment.yml).
 - CosIng function labels say what an ingredient can do, not how much of it is in a product, and they are incomplete (shea butter is only labelled "skin conditioning").
 - Skin type is self-reported, and reviews are not independent (446,491 authors wrote 982,854 reviews).
 - Company counts use the company name (two companies appear with two IDs each).
+- The EU lists are the state of June 2026 (annexes) and June 2023 (ingredient inventory), while the California reports end in June 2020. "Banned in the EU" therefore means banned today, not necessarily at the time of the report.
+- The CosIng files come from a third-party copy on Hugging Face (nad949/CosIng), not directly from the European Commission. The copy has no dataset card or licence, and its download date is unknown. The ban and restriction status may differ from the current official lists.
 
 ## Repository structure
 - `notebook/` – analysis notebooks (numbered; run order in "How to run")
